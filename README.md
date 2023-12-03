@@ -1,5 +1,10 @@
 # SP-Movie-Recommender-System
-    A recommender system is a type of information filtering system that suggests items or content to users based on their interests, preferences, or past behavior. These systems are commonly used in various domains, such as e-commerce, entertainment, social media, and online content platforms.
+    A recommender system is a type of information
+    filtering system that suggests items or content 
+    to users based on their interests, preferences, 
+    or past behavior. These systems are commonly used
+    in various domains, such as e-commerce, entertainment, 
+    social media, and online content platforms.
 
 In this repository I will use GNN model in order to build a movie recommender system based on MovieLens 100K Dataset.
 
