@@ -2,6 +2,8 @@
 
 ## Data exploration
 
+With each of 943 user interacting with at least 20 items from 1682 we can rely on collaborative filtering to learn latent features of users and items
+
 ![](figures/user-vs-item.png)
 
 ## Solution exploration
@@ -44,11 +46,30 @@ Two approaches that we can consider for the task
 - Collaborative filtering using matrix factorization
 - GNN using LightGCN
 
-### GNN (LightGCN)
+Let's use supervised LightGCN in order to solve this problem. The supervised version can be classified as a collaborative filtering approach since it uses only the interactions between users and items, without the consideration of metadata. 
 
-
-Loss: $$\text{RMSE} = \sqrt{\dfrac{1}{n}\sum_{i=1}^{n}{(y_i - \hat{y})^2}}$$
+For a given graph structure the model will try to predict a rating that the user would give to every item that they have an edge with.
 
 ## Training process 
 
+- Loss: $$\text{RMSE} = \sqrt{\dfrac{1}{n}\sum_{i=1}^{n}{(y_i - \hat{y})^2}}$$
+- Optimizer: Adam
+- ITERATIONS = 1_000
+- EPOCHS = 10
+- BATCH_SIZE = 1024
+- LR = 1e-3
+- ITERS_PER_EVAL = 200
+- ITERS_PER_LR_DECAY = 200
+- K = 10
+- LAMBDA = 1e-6
+ 
 ## Evaluation
+
+The evaluation uses recall and precision. By top-k highest predicted item's per user.  
+
+
+TODO:
+
+- implement dataloader to train in batches
+- save weight 
+- evaluate 
